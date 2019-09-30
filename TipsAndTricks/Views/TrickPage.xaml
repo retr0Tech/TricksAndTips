@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipsAndTricks.Views.TrickPage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="40"
+            VerticalOptions="CenterAndExpand">
+            <Label
+                Text="Please enter &#10; Your Name"/>
+            
+            <Entry
+                Placeholder="Enter Name">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor" Value="Aqua"/>
+                    </Trigger>
+                </Entry.Triggers>
+
+
+            </Entry>
+            <Label
+                Text="{Binding Name, StringFormat='Hello {}'}">
+                <Label.BackgroundColor>
+                    <Color>
+                        <x:Arguments>
+                            <x:Double>0</x:Double>
+                            <x:Double>0</x:Double>
+                            <x:Double>0</x:Double>
+                            <x:Double>0.4</x:Double>
+                        </x:Arguments>
+                    </Color>
+                </Label.BackgroundColor>
+            </Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
